@@ -7,14 +7,19 @@ public func routes(_ router: Router) throws {
         return "It works!"
     }
     
-    // Basic "Hello, world!" example
+    // Basic "Hello, world!" example4
     router.get("hello") { req in
         return "Hello, world!"
     }
 
     // Example of configuring a controller
-    let todoController = TodoController()
-    router.get("todos", use: todoController.index)
-    router.post("todos", use: todoController.create)
-    router.delete("todos", Todo.parameter, use: todoController.delete)
+//    let todoController = TodoController()
+//    router.get("todos", use: todoController.index)
+//    router.post("todos", use: todoController.create)
+//    router.delete("todos", Todo.parameter, use: todoController.delete)
+    
+    let productController = ProductController()
+    router.get("products", use: productController.index)
+    router.post("product", use: productController.create)
+    router.delete("product", use: productController.delete)
 }
